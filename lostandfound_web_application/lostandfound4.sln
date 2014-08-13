@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lostandfound4", "lostandfound4\lostandfound4.csproj", "{37AF76B0-44B6-48B5-886B-8E3A5C909F54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lostandfound4.Tests", "lostandfound4.Tests\lostandfound4.Tests.csproj", "{B17FC7E1-B196-4F02-B128-1663DF659875}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37AF76B0-44B6-48B5-886B-8E3A5C909F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37AF76B0-44B6-48B5-886B-8E3A5C909F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37AF76B0-44B6-48B5-886B-8E3A5C909F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37AF76B0-44B6-48B5-886B-8E3A5C909F54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B17FC7E1-B196-4F02-B128-1663DF659875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B17FC7E1-B196-4F02-B128-1663DF659875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B17FC7E1-B196-4F02-B128-1663DF659875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B17FC7E1-B196-4F02-B128-1663DF659875}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

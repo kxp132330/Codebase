@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="report_lost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="losf" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="datelosfou" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="cat" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="locdes" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="titl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="primcol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cuid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="report_lostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report_lostResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="report_lostSoapIn">
+    <wsdl:part name="parameters" element="tns:report_lost" />
+  </wsdl:message>
+  <wsdl:message name="report_lostSoapOut">
+    <wsdl:part name="parameters" element="tns:report_lostResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ReportLostFoundSoap">
+    <wsdl:operation name="report_lost">
+      <wsdl:input message="tns:report_lostSoapIn" />
+      <wsdl:output message="tns:report_lostSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReportLostFoundSoap" type="tns:ReportLostFoundSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="report_lost">
+      <soap:operation soapAction="http://tempuri.org/report_lost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ReportLostFoundSoap12" type="tns:ReportLostFoundSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="report_lost">
+      <soap12:operation soapAction="http://tempuri.org/report_lost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReportLostFound">
+    <wsdl:port name="ReportLostFoundSoap" binding="tns:ReportLostFoundSoap">
+      <soap:address location="http://localhost:15269/ReportLostFound.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ReportLostFoundSoap12" binding="tns:ReportLostFoundSoap12">
+      <soap12:address location="http://localhost:15269/ReportLostFound.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

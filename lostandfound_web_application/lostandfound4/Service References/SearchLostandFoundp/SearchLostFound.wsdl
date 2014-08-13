@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetLostandFound">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Location" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Category" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="keyword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLostandFoundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLostandFoundResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetLostandFoundSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLostandFound" />
+  </wsdl:message>
+  <wsdl:message name="GetLostandFoundSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLostandFoundResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SearchLostFoundSoap">
+    <wsdl:operation name="GetLostandFound">
+      <wsdl:input message="tns:GetLostandFoundSoapIn" />
+      <wsdl:output message="tns:GetLostandFoundSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SearchLostFoundSoap" type="tns:SearchLostFoundSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLostandFound">
+      <soap:operation soapAction="http://tempuri.org/GetLostandFound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SearchLostFoundSoap12" type="tns:SearchLostFoundSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLostandFound">
+      <soap12:operation soapAction="http://tempuri.org/GetLostandFound" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SearchLostFound">
+    <wsdl:port name="SearchLostFoundSoap" binding="tns:SearchLostFoundSoap">
+      <soap:address location="http://localhost:15269/SearchLostFound.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SearchLostFoundSoap12" binding="tns:SearchLostFoundSoap12">
+      <soap12:address location="http://localhost:15269/SearchLostFound.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

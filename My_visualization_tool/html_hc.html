@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<!-- <head> -->
+    <meta charset="utf-8">
+    <title>JS File Upload with Progress</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
+
+<script src='highchart_sample.js'></script>
+
+
+<!-- </head> -->
+<body>
+<form name="myForm" action="highchart_sample.js"  method="post">
+Enter the heading for chart
+<input type="text" name="formName" maxlength="50" id = "value" />
+<INPUT TYPE="button" onClick="history.go(0)" VALUE="Submit">
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
+
+</div>
+var x = document.getElementbyId('value').value
+
+ </form>
+ 
+</body>
+</html>
